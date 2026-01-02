@@ -1,5 +1,5 @@
 /*
-  Copyright 2025 Lukáš Růžička
+  Copyright 2026 Lukáš Růžička
 
   This file is part of exec_path_args.
 

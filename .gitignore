@@ -1,0 +1,7 @@
+/.cache
+/.devcontainer
+/.vscode
+/bin
+/build
+/compile_commands.json
+/tmp

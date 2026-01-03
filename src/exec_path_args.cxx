@@ -111,7 +111,7 @@ struct my_cstr_arr_deleter {
   void operator()(char *null_terminated_arr[]) const {
     if (null_terminated_arr != nullptr) {
       for (char **ptr = null_terminated_arr; *ptr != nullptr; ++ptr) {
-        std::free(*ptr); // due to `strdup`
+        std::free(*ptr); // due to `strndup`
       }
       delete[] null_terminated_arr;
     }
@@ -129,14 +129,15 @@ build_args_cstr(std::string const &path, std::vector<std::string> const &args) {
   // https://man7.org/linux/man-pages/man3/exec.3.html -> "The first
   // argument, by convention, should point to the filename associated with
   // the file being executed"
-  args_cstr_arr[0] = strdup(path.c_str());
+  args_cstr_arr[0] = strndup(path.c_str(), path.size());
   for (std::size_t i{0}; i < num_args; ++i) {
-    args_cstr_arr[i + 1] = strdup(args[i].c_str());
+    args_cstr_arr[i + 1] = strndup(args[i].c_str(), args[i].size());
   }
   args_cstr_arr[num_args + 1] = nullptr;
 
   return args_cstr_arr;
 }
+
 } // namespace
 
 exec_path_args::states

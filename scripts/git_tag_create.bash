@@ -26,5 +26,5 @@ if [[ "$(git -C "${ROOT_DIR}" tag --list "${desired_tag}")" == "${desired_tag}" 
 fi
 
 # https://git-scm.com/book/en/v2/Git-Basics-Tagging
-git -C "${ROOT_DIR}" tag -a "${desired_tag}"
+git -C "${ROOT_DIR}" tag -a "${desired_tag}" -m "${desired_tag}"
 git -C "${ROOT_DIR}" push origin "${desired_tag}"

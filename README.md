@@ -33,5 +33,3 @@ $ scripts/configure.bash -DEXECPATHARGS_ASAN=ON -DEXECPATHARGS_MSAN=OFF -DEXECPA
     - Polish it for now
     - Add presets for sanitizers
     - Compile it with varisous warnings, etc.
-- Maybe not so "aggressive" tag name(s)?
-  - E.g. not `v000.001.000` but `v0.1.0`

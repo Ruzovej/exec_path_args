@@ -6,6 +6,24 @@
 
 [`LGPLv3`](https://www.gnu.org/licenses/lgpl-3.0.html) -> [COPYING](COPYING) & [COPYING.lesser](COPYING.LESSER)
 
+## Running unit tests with sanitizers
+
+Examples:
+
+### With `tsan`
+
+```bash
+$ scripts/configure.bash -DEXECPATHARGS_ASAN=OFF -DEXECPATHARGS_MSAN=OFF -DEXECPATHARGS_UBSAN=OFF -DEXECPATHARGS_TSAN=ON && scripts/unit_tests.bash
+...
+```
+
+### With `asan` & `ubsan`
+
+```bash
+$ scripts/configure.bash -DEXECPATHARGS_ASAN=ON -DEXECPATHARGS_MSAN=OFF -DEXECPATHARGS_UBSAN=ON -DEXECPATHARGS_TSAN=OFF && scripts/unit_tests.bash
+...
+```
+
 ## TODO
 
 - Documentation?

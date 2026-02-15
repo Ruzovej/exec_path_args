@@ -654,7 +654,10 @@ TEST_CASE("exec_path_args") {
 
       // compromise between stalls (in case of a failure) and flakiness; feel
       // free to (slightly?!) increase this number if necessary
-      static int constexpr default_wait_timeout_ms{5};
+      // Summarized history:
+      // - introducing `tsan`, etc. -> increased from 5 to 10 (approx. 20 runs
+      // passed, before this update none)
+      static int constexpr default_wait_timeout_ms{10};
 
       std::optional<ips> my_sem;
       // using `std::optional` for a single purpose - so the c-tor can be

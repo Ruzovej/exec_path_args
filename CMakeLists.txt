@@ -83,11 +83,6 @@ target_include_directories(
         PRIVATE
             "${exec_path_args_SOURCE_DIR}/src/include"
 )
-#target_compile_definitions(
-#    exec_path_args
-#        PRIVATE
-#            EXECPATHARGS_INTERNAL_IMPLEMENTATION
-#)
 
 if (EXECPATHARGS_TOP_LEVEL)
     add_subdirectory(tests/unit)

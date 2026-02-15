@@ -6,6 +6,24 @@
 
 [`LGPLv3`](https://www.gnu.org/licenses/lgpl-3.0.html) -> [COPYING](COPYING) & [COPYING.lesser](COPYING.LESSER)
 
+## Running unit tests with sanitizers
+
+Examples:
+
+### With `tsan`
+
+```bash
+$ scripts/configure.bash -DBUILDCXX_ASAN=OFF -DBUILDCXX_MSAN=OFF -DBUILDCXX_UBSAN=OFF -DBUILDCXX_TSAN=ON && scripts/unit_tests.bash
+...
+```
+
+### With `asan` & `ubsan`
+
+```bash
+$ scripts/configure.bash -DBUILDCXX_ASAN=ON -DBUILDCXX_MSAN=OFF -DBUILDCXX_UBSAN=ON -DBUILDCXX_TSAN=OFF && scripts/unit_tests.bash
+...
+```
+
 ## TODO
 
 - Documentation?

@@ -17,6 +17,7 @@ if [[ "$(git -C "${ROOT_DIR}" branch --show-current)" != "main" ]]; then
     exit 1
 fi
 
+# https://git-scm.com/docs/git-fetch#Documentation/git-fetch.txt---tags
 git -C "${ROOT_DIR}" fetch --tags
 
 if [[ "$(git -C "${ROOT_DIR}" tag --list "${desired_tag}")" == "${desired_tag}" ]]; then
@@ -24,6 +25,6 @@ if [[ "$(git -C "${ROOT_DIR}" tag --list "${desired_tag}")" == "${desired_tag}" 
     exit 1
 fi
 
+# https://git-scm.com/book/en/v2/Git-Basics-Tagging
 git -C "${ROOT_DIR}" tag -a "${desired_tag}"
-
 git -C "${ROOT_DIR}" push origin "${desired_tag}"

@@ -16,7 +16,7 @@ fi
 git -C "${ROOT_DIR}" fetch --prune
 
 branch=''
-for branch in $(git -C "${ROOT_DIR}" branch -vv | grep ': gone]' | awk '{print $1}'); do
+for branch in $(git -C "${ROOT_DIR}" branch -vv | grep ': gone]' | awk '{if ($1 == "*") print $2; else print $1}'); do
     git -C "${ROOT_DIR}" branch -D "${branch}"
 done
 

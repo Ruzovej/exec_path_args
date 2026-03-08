@@ -84,7 +84,7 @@ target_include_directories(
             "${exec_path_args_SOURCE_DIR}/src/include"
 )
 
-add_executable(
+add_library(
     exec_path_args::exec_path_args
         ALIAS
             exec_path_args

@@ -84,6 +84,12 @@ target_include_directories(
             "${exec_path_args_SOURCE_DIR}/src/include"
 )
 
+add_executable(
+    exec_path_args::exec_path_args
+        ALIAS
+            exec_path_args
+)
+
 if (EXECPATHARGS_TOP_LEVEL)
     add_subdirectory(tests/unit)
 endif()

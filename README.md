@@ -13,14 +13,14 @@ Examples:
 ### With `tsan`
 
 ```bash
-$ scripts/configure.bash -DEXECPATHARGS_ASAN=OFF -DEXECPATHARGS_MSAN=OFF -DEXECPATHARGS_UBSAN=OFF -DEXECPATHARGS_TSAN=ON && scripts/unit_tests.bash
+$ scripts/configure.bash --tsan && scripts/unit_tests.bash
 ...
 ```
 
 ### With `asan` & `ubsan`
 
 ```bash
-$ scripts/configure.bash -DEXECPATHARGS_ASAN=ON -DEXECPATHARGS_MSAN=OFF -DEXECPATHARGS_UBSAN=ON -DEXECPATHARGS_TSAN=OFF && scripts/unit_tests.bash
+$ scripts/configure.bash --asan && scripts/unit_tests.bash
 ...
 ```
 
